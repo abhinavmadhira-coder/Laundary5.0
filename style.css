@@ -8,19 +8,6 @@ body {
   min-height: 100vh;
 }
 
-/* Glass effect for sections and cards */
-.record-card, .status-card, .admin-section, .student-section {
-  background: rgba(255, 255, 255, 0.08); /* semi-transparent */
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px;
-  backdrop-filter: blur(12px); /* blurred glass */
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  color: #fff;
-}
-
 /* Header with clean glow */
 header.banner {
   text-align: center;
@@ -31,6 +18,47 @@ header.banner {
   border-bottom: 1px solid rgba(255,255,255,0.2);
   color: #00c6ff;
   text-shadow: 0 0 10px rgba(0,198,255,0.6);
+}
+
+/* Center the portal selection */
+.portal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: 60vh;
+  flex-wrap: wrap;
+}
+
+/* Portal cards */
+.portal-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 30px;
+  width: 250px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.2s ease;
+}
+
+.portal-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .portal-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .portal-card {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
 /* Buttons with modern gradient */
@@ -52,6 +80,19 @@ button:hover {
   transform: translateY(-2px);
 }
 
+/* Glass effect for dashboard cards */
+.record-card, .status-card, .admin-section, .student-section {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
 /* Status badges */
 .status-badge {
   display: inline-block;
@@ -65,14 +106,12 @@ button:hover {
   margin-top: 8px;
 }
 
-/* Submitted = Red */
 .badge-submitted {
   background: rgba(255, 0, 0, 0.3);
   border: 1px solid rgba(255, 0, 0, 0.5);
   text-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
 }
 
-/* Processing = Yellow */
 .badge-processing {
   background: rgba(255, 200, 0, 0.3);
   border: 1px solid rgba(255, 200, 0, 0.5);
@@ -80,7 +119,6 @@ button:hover {
   text-shadow: 0 0 6px rgba(255, 200, 0, 0.6);
 }
 
-/* Completed = Green */
 .badge-completed {
   background: rgba(0, 255, 100, 0.3);
   border: 1px solid rgba(0, 255, 100, 0.5);
