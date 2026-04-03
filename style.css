@@ -4,123 +4,82 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #f0f0f0;
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  background-attachment: fixed;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertical center */
+  align-items: center;       /* horizontal center */
 }
 
-/* Header with clean glow */
+/* Header styling */
 header.banner {
   text-align: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 40px;
+  font-size: 2.5em; /* bigger title */
   color: #00c6ff;
-  text-shadow: 0 0 10px rgba(0,198,255,0.6);
+  text-shadow: 0 0 15px rgba(0,198,255,0.8);
 }
 
-/* Center the portal selection */
+/* Portal container */
 .portal-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  min-height: 60vh;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
 /* Portal cards */
 .portal-card {
   background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 30px;
-  width: 250px;
+  border-radius: 15px;
+  padding: 50px 30px;
+  width: 300px;
   text-align: center;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.3em; /* bigger text inside cards */
 }
 
+/* Hover glow */
 .portal-card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 6px 25px rgba(0,0,0,0.35);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0,198,255,0.6);
+  border: 1px solid rgba(0,198,255,0.6);
 }
 
-/* Responsive layout for mobile */
-@media (max-width: 768px) {
-  .portal-container {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .portal-card {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
-
-/* Buttons with modern gradient */
+/* Buttons */
 button {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   border: none;
   color: white;
-  padding: 10px 20px;
-  margin-top: 10px;
+  padding: 14px 28px;
+  margin-top: 15px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-  box-shadow: 0 0 12px rgba(0, 198, 255, 0.4);
+  font-size: 1.2em; /* bigger button text */
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
   background: linear-gradient(135deg, #0072ff, #00c6ff);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(0,198,255,0.7);
 }
 
-/* Glass effect for dashboard cards */
-.record-card, .status-card, .admin-section, .student-section {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 20px;
-  margin: 15px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  color: #fff;
-}
-
-/* Status badges */
-.status-badge {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 0.9em;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color: #fff;
-  margin-top: 8px;
-}
-
-.badge-submitted {
-  background: rgba(255, 0, 0, 0.3);
-  border: 1px solid rgba(255, 0, 0, 0.5);
-  text-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
-}
-
-.badge-processing {
-  background: rgba(255, 200, 0, 0.3);
-  border: 1px solid rgba(255, 200, 0, 0.5);
-  color: #fff8d6;
-  text-shadow: 0 0 6px rgba(255, 200, 0, 0.6);
-}
-
-.badge-completed {
-  background: rgba(0, 255, 100, 0.3);
-  border: 1px solid rgba(0, 255, 100, 0.5);
-  text-shadow: 0 0 6px rgba(0, 255, 100, 0.6);
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .portal-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .portal-card {
+    width: 85%;
+  }
 }
