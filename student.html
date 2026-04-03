@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header class="banner">
+    <h1>👕 Student Laundry Dashboard</h1>
+    <p>Track your laundry status with your token number</p>
+  </header>
+
+  <main>
+    <section class="student-section">
+      <h2>Enter Your Token Number</h2>
+      <input type="number" id="studentToken" placeholder="🔢 Token Number">
+      <button onclick="checkLaundryStatus()">📊 Check Status</button>
+    </section>
+
+    <section id="studentStatus" class="status-card"></section>
+  </main>
+</body>
+</html>

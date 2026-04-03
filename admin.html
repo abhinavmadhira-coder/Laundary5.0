@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <header class="banner">
+    <h1>🧑‍🔧 Admin Laundry Dashboard</h1>
+    <p>Manage laundry records with manual token entry</p>
+  </header>
+
+  <main>
+    <section class="admin-section">
+      <h2>Update Laundry Record</h2>
+      
+      <!-- Token input field -->
+      <input type="number" id="adminToken" placeholder="🔢 Token Number">
+
+      <!-- Shelf selection with 5 shelves -->
+      <select id="shelfNumber">
+        <option value="1">Shelf 1</option>
+        <option value="2">Shelf 2</option>
+        <option value="3">Shelf 3</option>
+        <option value="4">Shelf 4</option>
+        <option value="5">Shelf 5</option>
+      </select>
+
+      <!-- Status selection -->
+      <select id="statusSelect">
+        <option value="Submitted">Submitted</option>
+        <option value="Processing">Processing</option>
+        <option value="Completed">Completed</option>
+      </select>
+
+      <button onclick="updateLaundryRecord()">💾 Save Record</button>
+    </section>
+
+    <!-- Record list display -->
+    <section id="recordList"></section>
+  </main>
+</body>
+</html>
