@@ -7,23 +7,22 @@
 </head>
 <body>
   <header class="banner">
-    <h1>🧺 Smart Laundry System</h1>
+    <h1>Smart Laundry System</h1>
     <p>Select your portal</p>
   </header>
 
-  <main>
-    <!-- Student Section -->
-    <section>
+  <div class="portal-container">
+    <div class="portal-card">
       <h2>Student Portal</h2>
-      <button onclick="window.location.href='student-signup.html'">Sign Up</button>
-      <button onclick="window.location.href='student-login.html'">Sign In</button>
-    </section>
+      <button onclick="location.href='student.html'">Sign Up</button>
+      <button onclick="location.href='student.html'">Sign In</button>
+    </div>
 
-    <!-- Admin Section -->
-    <section>
+    <div class="portal-card">
       <h2>Admin Portal</h2>
-      <button onclick="window.location.href='admin-login.html'">Login</button>
-    </section>
-  </main>
+      <button onclick="location.href='admin.html'">Login</button>
+    </div>
+  </div>
 </body>
+
 </html>
