@@ -1,168 +1,88 @@
-/* Global Styles */
+/* Global background */
 body {
-  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #ff6f61, #ffcc70, #6a82fb, #00c9ff, #fc5c7d);
-  background-size: 500% 500%;
-  animation: gradientShift 20s ease infinite;
-  color: #fff;
-  text-align: center;
-  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-/* Animated Gradient Background */
-@keyframes gradientShift {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-/* Header Banner */
-.banner {
-  background: rgba(0,0,0,0.7);
-  padding: 30px;
-  box-shadow: 0 4px 25px rgba(0,0,0,0.6);
-}
-
-.banner h1 {
-  color: #ffcc70;
-  font-size: 2.8em;
-  text-shadow: 3px 3px 12px rgba(0,0,0,0.8);
-}
-
-/* Sections */
-section {
-  margin: 30px auto;
-  padding: 30px;
-  width: 70%;
-  border-radius: 25px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-  backdrop-filter: blur(12px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-/* Student Section Theme */
-.student-section {
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  color: #222;
-}
-
-/* Admin Section Theme */
-.admin-section {
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-  color: #222;
-}
-
-section:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-}
-
-/* Inputs */
-input, select {
-  margin: 12px;
-  padding: 14px;
+/* Glass effect for sections and cards */
+.record-card, .status-card, .admin-section, .student-section {
+  background: rgba(255, 255, 255, 0.08); /* semi-transparent */
   border-radius: 12px;
-  border: none;
-  outline: none;
-  width: 70%;
-  font-size: 1em;
-  background: rgba(255,255,255,0.9);
-  color: #333;
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 15px;
+  backdrop-filter: blur(12px); /* blurred glass */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  color: #fff;
 }
 
-/* Buttons */
+/* Header with clean glow */
+header.banner {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  color: #00c6ff;
+  text-shadow: 0 0 10px rgba(0,198,255,0.6);
+}
+
+/* Buttons with modern gradient */
 button {
-  margin: 12px;
-  padding: 14px 28px;
-  border-radius: 30px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
   border: none;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 1.1em;
   font-weight: bold;
-  background: linear-gradient(135deg, #ff6f61, #fc5c7d, #6a82fb);
-  color: #fff;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 198, 255, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background: linear-gradient(135deg, #00c9ff, #92fe9d, #fbc2eb);
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  transform: translateY(-2px);
 }
 
-/* Record Cards */
-.record-card {
+/* Status badges */
+.status-badge {
   display: inline-block;
-  margin: 20px;
-  padding: 25px;
-  background: linear-gradient(135deg, #fdfbfb, #ebedee);
-  color: #333;
+  padding: 6px 12px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
+  font-weight: bold;
+  font-size: 0.9em;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #fff;
+  margin-top: 8px;
 }
 
-.record-card:hover {
-  transform: scale(1.08);
+/* Submitted = Red */
+.badge-submitted {
+  background: rgba(255, 0, 0, 0.3);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  text-shadow: 0 0 6px rgba(255, 0, 0, 0.6);
 }
 
-/* Bubble Animation Overlay */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.25) 20%, transparent 20%);
-  background-size: 80px 80px;
-  animation: bubbles 30s linear infinite;
-  z-index: -1;
+/* Processing = Yellow */
+.badge-processing {
+  background: rgba(255, 200, 0, 0.3);
+  border: 1px solid rgba(255, 200, 0, 0.5);
+  color: #fff8d6;
+  text-shadow: 0 0 6px rgba(255, 200, 0, 0.6);
 }
 
-@keyframes bubbles {
-  from { transform: translateY(0); }
-  to { transform: translateY(-400px); }
-}
-/* Status Card for Student */
-.status-card {
-  margin: 30px auto;
-  padding: 25px;
-  width: 60%;
-  background: linear-gradient(135deg, #fdfbfb, #ebedee);
-  color: #333;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  font-size: 1.2em;
-  transition: transform 0.3s ease;
-}
-
-.status-card:hover {
-  transform: scale(1.05);
-}
-
-/* Admin Record List */
-#recordList {
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.record-card {
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-  color: #222;
-  border-radius: 15px;
-  padding: 20px;
-  margin: 15px;
-  width: 220px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease;
-}
-
-.record-card:hover {
-  transform: scale(1.08);
+/* Completed = Green */
+.badge-completed {
+  background: rgba(0, 255, 100, 0.3);
+  border: 1px solid rgba(0, 255, 100, 0.5);
+  text-shadow: 0 0 6px rgba(0, 255, 100, 0.6);
 }
