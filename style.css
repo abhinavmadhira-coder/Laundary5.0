@@ -15,8 +15,8 @@ body {
 /* Header styling */
 header.banner {
   text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.5em; /* bigger title */
+  margin-bottom: 50px;
+  font-size: 2.8em; /* bigger title */
   color: #00c6ff;
   text-shadow: 0 0 15px rgba(0,198,255,0.8);
 }
@@ -26,7 +26,7 @@ header.banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 70px;
   flex-wrap: wrap;
 }
 
@@ -35,14 +35,14 @@ header.banner {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 15px;
   padding: 50px 30px;
-  width: 300px;
+  width: 320px;
   text-align: center;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 20px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  font-size: 1.3em; /* bigger text inside cards */
+  font-size: 1.4em; /* bigger text inside cards */
 }
 
 /* Hover glow */
@@ -57,8 +57,8 @@ button {
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   border: none;
   color: white;
-  padding: 14px 28px;
-  margin-top: 15px;
+  padding: 16px 32px;
+  margin-top: 18px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
