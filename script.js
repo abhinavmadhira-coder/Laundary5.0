@@ -47,18 +47,24 @@ function checkLaundryStatus() {
   const record = laundryData.find(r => r.token == token);
 
   if (record) {
+    let shelfInfo = "";
+    if (record.status === "Completed") {
+      shelfInfo = `<p><strong>Shelf #:</strong> ${record.shelf}</p>`;
+      alert(`✅ Your laundry is ready! Collect from Shelf #${record.shelf}.`);
+    } else {
+      shelfInfo = `<p><strong>🕒 Shelf assignment pending...</strong></p>`;
+    }
+
     statusDiv.innerHTML = `
       <p><strong>Token #:</strong> ${record.token}</p>
       <p><strong>Status:</strong> ${record.status}</p>
-      <p><strong>Shelf:</strong> ${record.shelf}</p>
+      ${shelfInfo}
     `;
-    if (record.status === "Completed") {
-      alert(`✅ Your laundry is ready! Collect from Shelf #${record.shelf}.`);
-    }
   } else {
     statusDiv.innerHTML = "<p>No record found for this token.</p>";
   }
 }
+
 
 // -------------------- Admin Login --------------------
 function adminLogin() {
@@ -106,14 +112,23 @@ function displayRecords() {
   laundryData.forEach(record => {
     const card = document.createElement("div");
     card.className = "record-card";
+
+    let shelfInfo = "";
+    if (record.status === "Completed") {
+      shelfInfo = `<p><strong>Shelf #:</strong> ${record.shelf}</p>`;
+    } else {
+      shelfInfo = `<p><strong>🕒 Shelf assignment pending...</strong></p>`;
+    }
+
     card.innerHTML = `
       <p><strong>Token #:</strong> ${record.token}</p>
-      <p><strong>Shelf #:</strong> ${record.shelf}</p>
       <p><strong>Status:</strong> ${record.status}</p>
+      ${shelfInfo}
     `;
     list.appendChild(card);
   });
 }
+
 
 // -------------------- Auto-load on page --------------------
 document.addEventListener("DOMContentLoaded", () => {
